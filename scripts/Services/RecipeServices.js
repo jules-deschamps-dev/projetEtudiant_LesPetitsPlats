@@ -19,13 +19,14 @@ class RecipeServices
       const recipes = HomeTemplate.AllRecipes;
   
       const searchedRecipes = [];
-      recipes.forEach(recipe => {
+      for (let i = 0; i < recipes.length; i++)
+      {
         if (
-          recipe.name.toLowerCase().includes(search.toLowerCase()) || 
-          recipe.description.toLowerCase().includes(search.toLowerCase()) ||
-          recipe.ingredients.map(ingredient => ingredient.ingredient).join(", ").includes(search.toLowerCase())
-        ) searchedRecipes.push(recipe);
-      });
+          recipes[i].name.toLowerCase().includes(search.toLowerCase()) || 
+          recipes[i].description.toLowerCase().includes(search.toLowerCase()) ||
+          recipes[i].ingredients.map(ingredient => ingredient.ingredient).join(", ").includes(search.toLowerCase())
+        ) searchedRecipes.push(recipes[i]);
+      }
   
       //  mise à jour de l'attribut des recettes recherchées
       HomeTemplate.SearchedRecipes = searchedRecipes;
@@ -37,7 +38,6 @@ class RecipeServices
     // rechargement des recettes
     this.ReloadRecipes();
   }
-
 
 
 
