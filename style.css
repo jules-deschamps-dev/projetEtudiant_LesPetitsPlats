@@ -1,0 +1,265 @@
+:root{
+  --Yellow : #FFD15B;
+  --Black : #1B1B1B
+}
+
+@font-face {
+  font-family: 'Anton';
+  src: url("assets/fonts/Anton-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url("assets/fonts/Manrope.ttf") format('truetype');
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+}
+
+body{
+  margin: 0;
+  background: #EDEDED;
+}
+
+header {
+  background-image: url("./assets/headerBanner.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 560px;
+  background-size: cover;
+}
+
+header h1{
+  color: var(--Yellow, #FFD15B);
+  text-align: center;
+  font-family: Anton;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 0 0;
+  max-width: 890px;
+}
+
+header input{
+  width: 80vw;
+  max-width: 954px;
+  height: 3rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #FFF;
+  padding: 0 35px;
+  color: var(--Grey, #7A7A7A);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main{
+  margin: 45px 7vw;
+}
+
+#cards-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 48px;
+}
+
+#cards-container .card{
+  color: var(--Black, #1B1B1B);
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 731px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 21px;
+  background: #FFF;
+  box-shadow: 0px 4px 34px 30px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+#cards-container .card img{
+  display: block;
+  object-fit: cover;
+  height: 34.6%;
+}
+
+#cards-container .card h3{
+  color: #000;
+  font-family: Anton;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#cards-container .card .informations{
+  margin: 25px;
+}
+
+#cards-container .card .informations p {
+  max-height: 98px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#cards-container .card .informations .title{
+  color: var(--Grey, #7A7A7A);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  text-transform: uppercase;
+}
+
+#cards-container .card .informations .ingredients-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cards-container .card .informations .ingredients{
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  margin: 1rem 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#cards-container .card .informations .ingredients .name{
+  color: var(--Black, #1B1B1B);
+  font-weight: 500;
+}
+
+#cards-container .card .informations .ingredients .value{
+  color: var(--Grey, #7A7A7A);
+  font-weight: 400;
+}
+
+
+
+
+
+/* FILTERS */
+
+#filters-container{
+  position: relative;
+  display: grid;
+  z-index: 1;
+  margin: 32px 0;
+}
+
+#select-container{
+  display: flex;
+}
+#select-container ul{
+  position: absolute;
+  margin: 0 50px 0 0;
+}
+
+.list-anchors{
+  display: block;
+  min-height: 54px;
+  width: 195px;
+  margin: 0 50px 0 0;
+}
+
+#tags-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chips-container{
+  display: flex;
+  flex-direction: row;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.chips{
+  padding: 17px 18px 17px  18px;
+  border-radius: 10px;
+  margin: 15px 15px 0 0;
+  background-color: #FFD15B;
+  display: flex;
+  align-items: center;
+}
+
+.chips .chips-close{
+  display: flex;
+  padding: 5px;
+}
+
+.chips .chips-close img{
+  width: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  min-height: 54px;
+  width: 195px;
+  border-radius: 11px;
+  background-color: #FFF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+ul > span {
+  padding: 17px 16px 17px 16px;
+}
+
+li {
+  float: left;
+  position: relative;
+  display: none;
+  background-color: #FFF;
+  float: none;
+  display: none;
+  height: 37px;
+  display: none;
+  padding-left: 1rem;
+  align-items: center;
+}
+
+li:hover {
+  background-color: #FFD15B;
+}
+
+ul:hover li {
+  display: flex;
+}
+
+.flex{
+  display: flex;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
