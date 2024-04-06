@@ -25,21 +25,21 @@ class FilterTemplate {
     this.TitleOfSelect(tagName, select)
 
     
-
-    tags.forEach(tag => {
-      const ingredientElement = Helpers.HTMLElement("li", {title : tag}, tag, select);
+    for (let i = 0; i < tags.length; i++)
+    {
+      const ingredientElement = Helpers.HTMLElement("li", {title : tags[i]}, tags[i], select);
       ingredientElement.addEventListener("click", () => {
         // retire les tags clické
-        tags.splice(tags.indexOf(tag), 1); 
+        tags.splice(tags.indexOf(tags[i]), 1); 
 
         // ajoute le tags à la liste des selectionnés
-        selectedTags.push(tag);
+        selectedTags.push(tags[i]);
 
         // récupère la liste des recettes filtrée
         HomeTemplate.FilterRecipes = RecipeServices.findByTags(selectedTags, HomeTemplate.ActualsRecipes);
 
         // génère une chips et les events listener qui lui sont lié
-        const chips = new ChipsTemplate(tag); 
+        const chips = new ChipsTemplate(tags[i]); 
         chips.addEventListener("click", () => {
 
           // supprimer le tag de la liste des tags selectionné et le reajoute le tag à la liste des tags disponible
@@ -60,7 +60,7 @@ class FilterTemplate {
         // recharge la liste des recettes dans la page
         RecipeServices.ReloadRecipes(); 
       })
-    })
+    }
   }
 
 
